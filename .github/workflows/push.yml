@@ -1,0 +1,14 @@
+name: Deploy bhumi46 robots
+on: 
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+      - name: Build the stack
+        run: docker-compose up -d
